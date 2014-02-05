@@ -31,4 +31,12 @@ public class ValidateActions {
         validationException.addValidationError(error);
         return validationException;
     }
+
+    public static UpdateSettingValidationException addValidationError(String error, UpdateSettingValidationException validationException) {
+        if (validationException == null) {
+            validationException = new UpdateSettingValidationException();
+        }
+        validationException.addValidationError(error);
+        return validationException;
+    }
 }
