@@ -7,8 +7,10 @@
       "paths": [
         "/_stats",
         "/_stats/{metric}",
+        "/_stats/{metric}/{fields}",
         "/{index}/_stats",
-        "/{index}/_stats/{metric}"
+        "/{index}/_stats/{metric}",
+        "/{index}/_stats/{metric}/{fields}"
       ],
       "parts": {
         "index": {
@@ -19,6 +21,10 @@
           "type" : "list",
           "options" : ["_all", "completion", "docs", "fielddata", "filter_cache", "flush", "get", "id_cache", "indexing", "merge", "percolate", "refresh", "search", "segments", "store", "warmer", "suggest"],
           "description" : "Limit the information returned the specific metrics."
+        },
+        "fields": {
+          "type" : "list",
+          "description" : "A comma-separated list of fields for `fielddata` and `completion` index metric (supports wildcards)"
         }
       },
       "params": {

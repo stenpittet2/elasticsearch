@@ -47,9 +47,10 @@ public class RestIndicesStatsAction extends BaseRestHandler {
         super(settings, client);
         controller.registerHandler(GET, "/_stats", this);
         controller.registerHandler(GET, "/_stats/{metric}", this);
-        controller.registerHandler(GET, "/_stats/{metric}/{indexMetric}", this);
+        controller.registerHandler(GET, "/_stats/{metric}/{fields}", this);
         controller.registerHandler(GET, "/{index}/_stats", this);
         controller.registerHandler(GET, "/{index}/_stats/{metric}", this);
+        controller.registerHandler(GET, "/{index}/_stats/{metric}/{fields}", this);
     }
 
     @Override

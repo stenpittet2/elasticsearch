@@ -10,7 +10,9 @@
         "/_nodes/stats/{metric}",
         "/_nodes/{node_id}/stats/{metric}",
         "/_nodes/stats/{metric}/{index_metric}",
-        "/_nodes/{node_id}/stats/{metric}/{index_metric}"
+        "/_nodes/stats/{metric}/{index_metric}/{fields}",
+        "/_nodes/{node_id}/stats/{metric}/{index_metric}",
+        "/_nodes/{node_id}/stats/{metric}/{index_metric}/{fields}"
       ],
       "parts": {
         "metric" : {
@@ -26,6 +28,10 @@
         "node_id": {
           "type" : "list",
           "description" : "A comma-separated list of node IDs or names to limit the returned information; use `_local` to return information from the node you're connecting to, leave empty to get information from all nodes"
+        },
+        "fields": {
+          "type" : "list",
+          "description" : "A comma-separated list of fields for `fielddata` and `completion` index metric (supports wildcards)"
         }
       },
       "params": {
